@@ -5,27 +5,46 @@
    Web app: _put project's github pages URL here_
    */
 
-// ======== OBJECTS DEFINITIONS ========
-// Define your objects here
+"use strict";
 
+class Inhabitant {
+  constructor(type, name, legs, hands, say) {
+    this.type = type;
+    this.name = name;
+    this.legs = legs;
+    this.hands = hands;
+    this.say = say;
+  }
+}
+
+// ======== OBJECTS DEFINITIONS ========
+
+const dog = new Inhabitant("dog", "Rex", 4, 0, '"Woff!"');
+
+const cat = new Inhabitant("cat", "Buba", 4, 0, '"Meow!"');
+
+const woman = new Inhabitant(
+  "woman",
+  "Katalin",
+  2,
+  2,
+  '"need make up my nails"'
+);
+
+const man = new Inhabitant(
+  "man",
+  "Bob",
+  2,
+  2,
+  '"Everything will be done. But tomorrow."'
+);
+
+const joinMethod = function(arg) {
+  return [arg.type, arg.name, arg.legs, arg.hands, arg.say].join(", ");
+};
 
 // ======== OUTPUT ========
-/* Use print(message) for output.
-   Default tag for message is <pre>. Use print(message,'div') to change containing element tag.
 
-   Message can contain HTML markup. You may also tweak index.html and/or styles.css.
-   However, please, REFRAIN from improving visuals at least until your code is reviewed
-   so code reviewers might focus on a single file that is index.js.
-   */
-
-/* Print examples:
-   print('ABC');
-   print('<strong>ABC</strong>');
-   print('<strong>ABC</strong>', 'div');
-
-   print('human; John; male; 2; 2; Hello world!; Rex, Tom, Jenny');
-   print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny');
-   print('human; <strong>John</strong>; male; 2; 2; <em>Hello world!</em>; Rex, Tom, Jenny', 'div');
-   */
-
-
+[dog, cat, woman, man].forEach(function(el) {
+  print(joinMethod(el));
+});
