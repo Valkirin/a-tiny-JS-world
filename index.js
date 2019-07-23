@@ -1,8 +1,6 @@
-/* Refer to https://github.com/OleksiyRudenko/a-tiny-JS-world for the task details
-   Complete the below for code reviewers' convenience:
-
-   Code repository: _put repo URL here_
-   Web app: _put project's github pages URL here_
+/* 
+   Code repository: https://github.com/Valkirin/kottans-frontend/tree/master/task_js_dom
+   Web app: https://valkirin.github.io/tiny_js_world/
    */
 
 "use strict";
@@ -39,12 +37,10 @@ const man = new Inhabitant(
   '"Everything will be done. But tomorrow."'
 );
 
-const joinMethod = function(arg) {
+const joinMethod = arg => {
   return [arg.type, arg.name, arg.legs, arg.hands, arg.say].join(", ");
 };
 
 // ======== OUTPUT ========
 
-[dog, cat, woman, man].forEach(function(el) {
-  print(joinMethod(el));
-});
+[dog, cat, woman, man].forEach(el => print(joinMethod(el)));
